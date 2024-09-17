@@ -1,0 +1,365 @@
+* {
+  margin: 0;
+  padding: 0;
+
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+
+}
+
+.header {
+  width: 100%;
+  height: 55px;
+  background-color: rgba(0, 0, 0, 0.741);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  gap: 5px;
+  padding-left: 10px;
+  z-index: 3;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.logo-container {
+  border: 2px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-inline: 20px;
+  gap: 5px;
+}
+
+.logo {
+  width: 45px;
+  height: 45px;
+  /* border:2px solid red; */
+  /* background-color: rgb(29, 29, 29);
+  border-radius: 50%; */
+  overflow: hidden;
+
+}
+
+.menu-btn {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 2px solid rgb(81, 80, 80);
+  display: grid;
+  place-items: center;
+  position: absolute;
+  left: 15px;
+
+}
+
+.menu-btn img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+
+}
+
+.header-title {
+  /* border:2px solid red; */
+  color: ghostwhite;
+  font-weight: 700;
+  font-size: 1.75rem;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.header-title:hover {
+  color: rgb(235, 170, 5);
+}
+
+.header p {
+  font-size: 1.65rem;
+  text-transform: capitalize;
+  font-weight: 800;
+  color: rgb(229, 230, 231);
+  font-family: "Concert One", sans-serif;
+}
+
+.theme-box {
+  position: absolute;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+  /* border:1px solid rgb(83, 83, 85); */
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.theme-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+#blink {
+  animation: blinking 2000ms linear infinite;
+}
+
+@keyframes blinking {
+
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.nav {
+  width: 300px;
+  height: 100vh;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background-color: rgba(9, 9, 9, 0.772);
+  z-index: 4;
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  padding-top: 10px;
+  border: 1px solid rgb(62, 62, 62);
+  border-radius: 0px 20px 20px 0px;
+
+}
+
+.nav-header {
+  width: 90%;
+  margin: auto;
+  /* border:2px solid rgb(0, 115, 255); */
+  height: 50px;
+  color: ghostwhite;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: capitalize;
+  font-family: "Concert One", sans-serif;
+}
+
+.nav-header h3 {
+  font-size: 1.35rem;
+}
+
+.nav-close {
+  width: 20px;
+  height: 20px;
+  /* border:2px solid rgb(255, 0, 0); */
+  cursor: pointer;
+}
+
+.nav-close img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.menu-links {
+  /* border:2px solid red; */
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: ghostwhite;
+  gap: 10px;
+  margin: 10px auto;
+  position: relative;
+  border-top: 2px solid rgb(43, 43, 43);
+  padding: 10px 0px;
+
+}
+
+.menu-links a {
+  width: 100%;
+  height: 45px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  padding-left: 10px;
+  text-decoration: none;
+  color: ghostwhite;
+  border-radius: 10px;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.menu-links .active {
+  background: rgb(0, 145, 255);
+
+
+}
+
+.menu-links a:hover:not(.active) {
+  background-color: #292929;
+}
+
+.menu-icon {
+  width: 30px;
+  height: 30px;
+
+
+}
+
+.menu-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.notes-page {
+  padding: 70px 20px 70px 20px;
+
+}
+
+.create-page {
+  padding: 70px 20px 70px 20px;
+
+
+}
+
+.create-heading {
+  text-transform: uppercase;
+}
+
+.form-container {
+  border: 1px solid rgb(230, 230, 230);
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.form-container-light {
+  border: 1px solid rgb(230, 230, 230);
+  background-color: #E5E7F0;
+}
+
+.form-container-dark {
+  border: 1.5px solid rgb(64, 64, 64);
+  background-color: #1F1F1F;
+}
+
+.form {
+  width: 100%;
+  /* border:2px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  padding-block: 20px;
+
+}
+
+#success {
+  border: 2px solid rgb(0, 251, 0);
+  background-color: rgba(117, 193, 121, 0.67);
+  color: rgb(0, 255, 0);
+  font-weight: 300;
+  /* width:20%; */
+  padding-block: 50px;
+  padding-inline: 100px;
+  border-radius: 5px;
+  text-align: center;
+  position: fixed;
+  top: 190px;
+  z-index: 3;
+  font-size: 1.8rem;
+  display:"flex";
+  flex-direction: column;
+  justify-content:center;
+  align-items:center
+}
+
+.card {
+  position: relative;
+}
+
+.new-label {
+  position: absolute;
+  z-index: 2;
+  bottom: 0px;
+  left: 0px;
+  width: 70px;
+  padding: 5px 8px;
+
+  color: #F4F6F5;
+  font-weight: 800;
+
+  text-transform: uppercase;
+  background: linear-gradient(to right, #018b03, transparent)
+}
+.old-label{
+  position: absolute;
+  z-index: 2;
+  bottom: 0px;
+  left: 0px;
+  width: 70px;
+  padding: 5px 8px;
+  color: #F4F6F5;
+  font-weight: 800;
+
+  text-transform: uppercase;
+  background: linear-gradient(to right, #fd1c1c, transparent)
+}
+.delete-pop {
+  width: 100%;
+  height: calc(100vh - 50px);
+  -webkit-backfrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  z-index: index 3;
+  position: fixed;
+  top:50px;
+  left:0;
+  display:grid;
+  place-items: center;
+}
+
+.delete-pop-light {
+  background-color: rgba(131, 126, 126, 0.383);
+}
+
+.delete-pop-dark {
+  background-color: rgba(92, 92, 92, 0.394);
+}
+.my-masonry-grid {
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
+  display: flex;
+  margin-left: -30px; /* gutter size offset */
+  width: auto;
+}
+.my-masonry-grid_column {
+  padding-left: 30px; /* gutter size */
+  background-clip: padding-box;
+}
+
+/* Style your items */
+.my-masonry-grid_column > div { /* change div to reference your elements you put in <Masonry> */
+  /* background: grey; */
+  margin-bottom: 30px;
+ 
+}
