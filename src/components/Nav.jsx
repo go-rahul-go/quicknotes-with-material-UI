@@ -25,7 +25,7 @@ const Nav = ({ menuOpen, menuOpenStatus }) => {
   return (
     <AnimatePresence>
      
-        <motion.div className={"nav"} key={menuOpen} variants={mot} initial="start" animate={menuOpen ? "end" : "start"} exit="exit">
+        <motion.div className={"nav"} key={menuOpen} variants={mot} initial="start" animate={menuOpen ? "end" : "start"} exit="exit" id="nav">
           <div className='nav-header'>
             <h3>tusky_Notes_</h3>
             <div className='nav-close' onClick={() => menuOpenStatus(false)}>

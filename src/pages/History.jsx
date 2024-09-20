@@ -5,7 +5,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import AddIcon from '@mui/icons-material/Add';
 import { deleteForever, add } from "../store/noteSlice"
 import Divider from '@mui/material/Divider';
-
+import BlockIcon from '@mui/icons-material/Block';
 
 
 const History = () => {
@@ -49,42 +49,43 @@ const History = () => {
                   fontWeight: 600,
                   textTransform: "uppercase",
                   width: "77%",
-                  py:0,
-                  
+                  py: 0,
+
                 }}
               >
 
               </CardHeader>
-              <Divider orientation="vertical" 
-              sx={
-                {
-                  height:"1px",
-                  width:"98%",
-                  mx:"auto",
-                  backgroundColor:notes.theme==="light"?"#C3CBD5":"#44474B"
-                }
-                }/>  
+              <Divider orientation="vertical"
+                sx={
+                  {
+                    height: "1px",
+                    width: "98%",
+                    mx: "auto",
+                    backgroundColor: notes.theme === "light" ? "#C3CBD5" : "#44474B"
+                  }
+                } />
               <CardContent
                 sx={{
-                
+
                   py: 1,
-                  
-                  width:"98%",
-                
-                  overflow:"hidden",
+
+                  width: "98%",
+
+                  overflow: "hidden",
                   textWrap: "wrap",
 
                 }}>
                 <Typography sx={
-                  { fontSize: 18,
-                    fontWeight:400,
-                   
+                  {
+                    fontSize: 18,
+                    fontWeight: 400,
+
                     wordWrap: "break-word",
-                   
-                    
-                   }
+
+
                   }
-                 >
+                }
+                >
                   {item.taskName}
                 </Typography>
 
@@ -101,7 +102,7 @@ const History = () => {
                   sx={{
                     color: "#009FB7",
                     outline: "0.10rem solid #009FB7",
-                    fontSize:13,
+                    fontSize: 13,
                     ":hover": {
                       backgroundColor: "#009FB7",
                       color: "white"
@@ -114,8 +115,8 @@ const History = () => {
                   sx={{
                     color: "#FF2F0A",
                     outline: "0.10rem solid #FF2F0A",
-                  
-                    fontSize:13,
+
+                    fontSize: 13,
                     ":hover": {
                       backgroundColor: "#FF2F0A",
                       color: "white"
@@ -128,7 +129,7 @@ const History = () => {
               </CardActions>
 
               <CardContent>
-                <Typography sx={{ fontSize: 15, display: "flex", justifyContent: "flex-end",textTransform:"capitalize",fontWeight:300,py:0}}>
+                <Typography sx={{ fontSize: 15, display: "flex", justifyContent: "flex-end", textTransform: "capitalize", fontWeight: 300, py: 0 }}>
                   {item.date.date} {item.date.month} {item.date.year}, {item.date.day}
                 </Typography>
               </CardContent>
@@ -151,7 +152,8 @@ function DeletePopUp({ index, deletePopUpStatus, theme }) {
 
   const dispatch = useDispatch();
   return (
-    <div className={theme==="light"?"delete-pop delete-pop-light":"delete-pop delete-pop-dark"}>
+    <div className={theme === "light" ? "delete-pop delete-pop-light" : "delete-pop delete-pop-dark"}
+      onClick={(e) => { deletePopUpStatus(false); }}>
       <Card
         sx={
           {
@@ -161,9 +163,12 @@ function DeletePopUp({ index, deletePopUpStatus, theme }) {
 
             boxShadow: 0,
             backgroundColor: theme === "light" ? "#F5F5F5" : "#111618",
-            borderRadius: "20px"
+            borderRadius: "20px",
+            position: "relative",
+            zIndex: "4"
           }
         }
+        onClick={(e) => { e.stopPropagation() }}
       >
         <CardContent
           sx={
@@ -188,8 +193,9 @@ function DeletePopUp({ index, deletePopUpStatus, theme }) {
         <CardActions
           sx={
             {
-              display: "grid",
-              placeItems: "center",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center"
 
             }
           }
@@ -199,19 +205,40 @@ function DeletePopUp({ index, deletePopUpStatus, theme }) {
 
             sx={
               {
-                outline: "0.10rem solid red",
-
-                color: "red",
-                px: 5,
+                background: "red",
+                  color: "black",
+                px:2,
+                py:1,
+                
+                fontWeight:700,
+               
                 ":hover": {
-                  background: "red",
-                  color: "white"
+                  background:"#DE0D02"
+                  
                 }
               }
             }
             endIcon={<DeleteIcon />}
           >
             delete
+          </Button>
+          <Button
+            onClick={() => { deletePopUpStatus(false); }}
+            sx={
+              {
+                backgroundColor:"rgb(0, 231, 0)",
+                color:"black",
+                fontWeight:700,
+                px:2,
+                py:1,
+                ":hover":{
+                  backgroundColor:"rgb(2, 182, 2)"
+                }
+              }
+            }
+            endIcon={<BlockIcon/>}
+          >
+            cancel
           </Button>
         </CardActions>
 

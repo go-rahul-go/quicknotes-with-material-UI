@@ -9,7 +9,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 
 const Note = ({ notes, index, theme }) => {
-    console.log(notes)
+  
     const selector = useSelector(state => state.notes)
     const dispatch = useDispatch()
 

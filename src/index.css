@@ -9,6 +9,8 @@ body {
   width: 100%;
   height: 100%;
   font-family: "Roboto", sans-serif;
+  scroll-behavior: smooth;
+  
 
 }
 
@@ -227,7 +229,9 @@ body {
 }
 
 .notes-page {
-  padding: 70px 20px 70px 20px;
+  padding:5px 20px 70px 20px;
+  position: relative;
+
 
 }
 
@@ -362,4 +366,74 @@ body {
   /* background: grey; */
   margin-bottom: 30px;
  
+}
+
+.gotop{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom:20px;
+  right:20px;
+  width:40px;
+  height:40px;
+  z-index:4;
+  
+  text-decoration: none;
+  border-radius: 50%;
+}
+.gotop-light{
+  background-color: rgb(126, 72, 253);
+  color:white;
+}
+.gotop-dark{
+  background-color: rgb(255, 179, 0);
+}
+.gotop span{
+  font-size: 0.9rem;
+  text-transform: capitalize;
+
+}
+.gotop-hide{
+  display: none;
+}
+.nothing{
+  width:100%;
+  /* border:2px solid red; */
+  min-height:50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  font-size:1.75rem;
+  font-weight: 600;
+  animation: cloud 3500ms linear infinite;
+  text-transform: capitalize;
+}
+#nothing-image{
+  width:90%;
+  height:350px;
+  /* border:2px solid blue; */
+}
+
+#nothing-image img{
+  width: 100%;
+  height:100%;
+  object-fit: contain;
+}
+
+@keyframes cloud {
+  0%,100%{
+    transform: translateY(-5%);
+  }
+  50%{
+    transform: translateY(0%);
+  }
+  
+}
+
+f{
+  color:rgb(2, 182, 2)
 }
