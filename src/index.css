@@ -278,26 +278,33 @@ body {
 
 }
 
-#success {
-  border: 2px solid rgb(0, 251, 0);
-  background-color: rgba(117, 193, 121, 0.67);
-  color: rgb(0, 255, 0);
+.success {
+ 
   font-weight: 300;
   /* width:20%; */
-  padding-block: 50px;
-  padding-inline: 100px;
-  border-radius: 5px;
+  padding-block: 40px;
+  padding-inline: 50px;
+  border-radius: 10px;
   text-align: center;
   position: fixed;
   top: 190px;
   z-index: 3;
-  font-size: 1.8rem;
+  font-size: 1.45rem;
   display:"flex";
   flex-direction: column;
   justify-content:center;
   align-items:center
 }
-
+.success-light{
+  background-color: #04abff;
+ 
+  color:rgb(239, 240, 239)
+}
+.success-dark{
+  background-color: rgb(67, 67, 67);
+  border:2px solid rgb(52, 52, 52);
+  color: rgb(0, 220, 51);
+}
 .card {
   position: relative;
 }

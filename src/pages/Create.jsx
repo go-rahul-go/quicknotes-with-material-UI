@@ -121,9 +121,9 @@ const Create = () => {
         <h2 style={{ textTransform: "capitalize", paddingBlock: "10px" }}>create new note</h2>
         <AnimatePresence>
           {success &&
-            <motion.div id="success" key={success} initial={{ y: "-100vh" }} animate={{ y: 0 }} exit={{ y: "-100vh" }}>
-              <h4>success</h4>
-              <p>redirecting to home page</p>
+            <motion.div className={tasks.theme==="light"?"success success-light":"success success-dark"} key={success} initial={{ y: "-100vh" }} animate={{ y: 0 }} exit={{ y: "-100vh" }}>
+              <h4 style={{textTransform:"uppercase"}}>success</h4>
+              <p style={{textTransform:"capitalize"}}>redirecting to home page</p>
             </motion.div>}
         </AnimatePresence>
 
