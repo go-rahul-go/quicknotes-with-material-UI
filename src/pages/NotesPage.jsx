@@ -2,7 +2,7 @@
 import { Paper, Typography } from '@mui/material';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
-
+import { Link } from 'react-router-dom';
 
 import Note from '../components/Note';
 import Masonry from 'react-masonry-css';
@@ -10,8 +10,7 @@ import GoTop from '../components/GoTop';
 import { useEffect, useRef } from 'react';
 import { useScroll } from 'framer-motion';
 import { useMotionValueEvent } from 'framer-motion';
-import nothing from  "../assets/nothing.png"
-import notFound from "../assets/notfound.jpg"
+import addNew from "../assets/addnew.svg"
 
 const breakPoints = {
   default: 3,
@@ -48,10 +47,12 @@ const Notes = () => {
       {
         task.tasks.length === 0 &&
         <div className='nothing'>
-          <div id="nothing-image">
-            <img src={nothing} alt="" onError={(e)=>{e.target.src=notFound; e.target.onError = null;}}/>
-          </div>
-          <p>nothing to show</p>
+          <Link to="/create" id="add-new-home">add new task
+            <span className='add-new-logo'>
+                <img src={addNew} alt=""/>
+            </span>
+          </Link>
+          <p>nothing to show here</p>
         </div>
       }
 
